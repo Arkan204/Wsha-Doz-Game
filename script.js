@@ -94,8 +94,8 @@ function startGame() {
   document.getElementById('current-category').textContent = categoryLabel.split('(')[0].trim();
 
   // Update Input MaxLength
-  gameInput.maxLength = WORD_LENGTH;
-  gameInput.value = "";
+  gameInput.maxLength = WORD_LENGTH + 1; // +1 for the dummy space
+  gameInput.value = " "; // Dummy space
   gameInput.focus();
 
   endGameActions.classList.add('hidden');
@@ -109,7 +109,7 @@ function playAgain() {
   currentTile = 0;
   isGameOver = false;
 
-  gameInput.value = "";
+  gameInput.value = " "; // Dummy space
   gameInput.focus();
   endGameActions.classList.add('hidden');
 
@@ -156,28 +156,32 @@ gameInput.addEventListener('input', (e) => {
   if (isGameOver) return;
 
   const val = gameInput.value;
-  const char = val.slice(-1);
 
-  // We handle Backspace separate via keydown for better reliability
-  if (e.inputType === 'insertText' && char) {
+  // Handle Backspace (input is empty)
+  if (val.length === 0) {
+    deleteLetter();
+    gameInput.value = " ";
+    return;
+  }
+
+  // Handle Addition (length > 1)
+  if (val.length > 1) {
+    const char = val.charAt(1);
     // Regex for Kurdish/Arabic chars
     if (/^[\u0600-\u06FF\u0750-\u077F]$/.test(char)) {
       addLetter(char);
     }
+    gameInput.value = " ";
   }
-
-  gameInput.value = '';
 });
 
-// Handle keys (Enter & Backspace) reliably via keydown
+// Handle keys (Enter) reliably via keydown
 gameInput.addEventListener('keydown', (e) => {
   if (isGameOver) return;
 
   if (e.key === 'Enter') {
     checkGuess();
     e.preventDefault();
-  } else if (e.key === 'Backspace') {
-    deleteLetter();
   }
 });
 
