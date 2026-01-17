@@ -1,5 +1,7 @@
 # Wsha Doz - وشە دۆز 🎮
 
+**[🚀 Play Now / ئێستا یاری بکە](https://wsha-doz-game.netlify.app/)**
+
 **Wsha Doz** is a modern, fast, and responsive Kurdish word guessing game based on the Wordle mechanic. It features multiple categories (Names, Animals, Food, Cities, etc.) and customizable word lengths.
 
 **وشە دۆز** یارییەکی کوردییە وەک یاری (Wordle) دیزاین کراوە. دەتوانیت وشە نهێنییەکان بدۆزێتەوە لە چەندین بەشی جیاوازی وەک (ناو، ئاژەڵ، خواردن، شارەکان و هتد) بە درێژی جیاواز.
@@ -50,19 +52,9 @@
 
 ---
 
-## 🚀 Setup & Deployment
-
-To run this project locally:
-1. Clone the repository.
-2. Open `index.html` in any web browser.
-
-This project is ready to be hosted on [GitHub Pages](https://pages.github.com/), [Netlify](https://www.netlify.com/), or [Vercel](https://vercel.com/).
-
----
-
 ## 👨‍💻 Author
 
-Created by **Arkan Khalid** - [LinkedIn/GitHub Profile Link Here]
+Created by **Arkan Khalid**
 
 ---
 
