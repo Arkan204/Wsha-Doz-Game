@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Wsha Doz - A modern Kurdish word guessing game. Play Wordle in Kurdish with customizable word lengths and various categories.">
+  <title>Wsha Doz - Wordle کوردی</title>
+  <link rel="stylesheet" href="style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&family=Noto+Naskh+Arabic:wght@400;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="game-container">
+    <header>
+      <div class="menu-left">
+        <button id="help-btn" class="icon-btn">؟</button>
+      </div>
+      <h1 class="title">وشە دۆز</h1>
+      <div class="menu-right">
+        <button id="restart-btn" class="icon-btn" title="Restart Game">↻</button>
+      </div>
+    </header>
+
+    <div id="start-screen" class="screen active">
+      <div class="start-card">
+        <h2 class="subtitle">هەڵبژاردنەکان</h2>
+
+        <div class="setting-group">
+          <label for="category-select">جۆر (Category)</label>
+          <select id="category-select" name="category">
+            <option value="names">ناو (Names)</option>
+            <option value="animals">ئاژەڵ (Animals)</option>
+            <option value="food">خواردن (Food)</option>
+            <option value="fruits">میوە (Fruits)</option>
+            <option value="cities">شارەکان (Cities)</option>
+            <option value="countries">وڵاتەکان (Countries)</option>
+          </select>
+        </div>
+
+        <div class="setting-group">
+          <label for="length-select">ژمارەی پیت (Length)</label>
+          <input type="number" id="length-select" name="length" min="4" max="7" value="5">
+        </div>
+
+        <button id="start-game-btn" class="primary-btn">دەستپێکردن</button>
+      </div>
+    </div>
+
+    <div id="game-ui" class="screen hidden">
+      <h3 id="current-category" class="category-display"></h3>
+      <div id="message-container"></div>
+      <div id="board-container">
+        <div id="board"></div>
+      </div>
+      <div id="end-game-actions" class="hidden">
+        <button id="play-again-btn" class="action-btn primary">دووبارە یاری بکەوە</button>
+        <button id="go-to-menu-btn" class="action-btn secondary">گەڕانەوە بۆ سەرەتا</button>
+      </div>
+      <div id="keyboard-container">
+        <input type="text" id="game-input" aria-label="Game Input" autocomplete="off" autocorrect="off"
+          spellcheck="false">
+        <div class="instruction-hint">تکایە بۆ نووسین کلیک لە بۆردەکە بکە</div>
+        <div class="instruction-hint sub-hint">بۆ دەستپێکردنی یاری کیبۆردەکەت بگۆڕە بۆ کوردی</div>
+      </div>
+    </div>
+
+    <footer class="creator-attribution">
+      Created by Arkan Khalid
+    </footer>
+  </div>
+
+  <!-- Help Modal -->
+  <div id="help-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" aria-label="Close help">&times;</span>
+      <h2>چۆن یاری دەکەیت؟</h2>
+      <p>وشە نهێنییەکە بدۆزەرەوە بە ٦ هەوڵ.</p>
+      <p>هەر هەوڵێک دەبێت وشەیەکی کوردی پیتەکانی یەکسان بێت بەوەی هەڵتبژاردووە.</p>
+      <div class="examples">
+        <p><strong>نموونەکان: بۆ نموونە وشەکە = کوردی</strong></p>
+
+        <div class="row-example">
+          <div class="tile" data-state="correct">ک</div>
+          <div class="tile">ی</div>
+          <div class="tile">س</div>
+          <div class="tile">ە</div>
+          <div class="tile">ڵ</div>
+        </div>
+        <p>پیتی <strong>ک</strong> لە وشەکەدا هەیە و لە شوێنی ڕاستی خۆیەتی.</p>
+
+        <div class="row-example">
+          <div class="tile">ه</div>
+          <div class="tile">ێ</div>
+          <div class="tile">ل</div>
+          <div class="tile" data-state="present">ک</div>
+          <div class="tile">ە</div>
+        </div>
+        <p>پیتی <strong>ک</strong> لە وشەکەدا هەیە بەڵام لە شوێنی خۆی نییە.</p>
+
+        <div class="row-example">
+          <div class="tile">ب</div>
+          <div class="tile" data-state="absent">ا</div>
+          <div class="tile">ر</div>
+          <div class="tile">ا</div>
+          <div class="tile">ن</div>
+        </div>
+        <p>پیتی <strong>ا</strong> لە هیچ کام لە شوێنەکانی وشە نهێنییەکەدا نییە.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
