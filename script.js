@@ -62,7 +62,12 @@ function startGame() {
   const category = document.getElementById('category-select').value;
 
   // Get all words in category
-  const allCategoryWords = WORD_DATA[category];
+  let allCategoryWords;
+  if (category === 'mix') {
+    allCategoryWords = Object.values(WORD_DATA).flat();
+  } else {
+    allCategoryWords = WORD_DATA[category];
+  }
 
   if (!allCategoryWords || allCategoryWords.length === 0) {
     alert("هیچ وشەیەک نەدۆزرایەوە بۆ ئەم بەشە.");
@@ -104,7 +109,12 @@ function playAgain() {
   // Re-pick from the whole current category list (stored in WORD_DATA)
   // We need to know which category was selected
   const category = document.getElementById('category-select').value;
-  const allCategoryWords = WORD_DATA[category];
+  let allCategoryWords;
+  if (category === 'mix') {
+    allCategoryWords = Object.values(WORD_DATA).flat();
+  } else {
+    allCategoryWords = WORD_DATA[category];
+  }
 
   secretWord = allCategoryWords[Math.floor(Math.random() * allCategoryWords.length)];
   WORD_LENGTH = secretWord.length;
