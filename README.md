@@ -12,8 +12,8 @@
 
 - **🌍 Fully Kurdish Interface**: Tailored specifically for the Kurdish script (Central Kurdish).
 - **🎨 Modern Design**: Sleek dark-mode interface with smooth animations and responsive layout.
-- **🔡 Flexible Word Length**: Play with words ranging from 4 to 7 letters.
-- **📚 Multiple Categories**: Dozens of categories including Names, Countries, Cities, and more.
+- **🎲 Automatic Word Length**: The game intelligently picks a random word length (4-7 letters) for every new round.
+- **📚 Diverse Categories**: Includes Names, Animals, Food, Cities, Countries, and a **new "Mix" category** that combines everything!
 - **🔍 Smart Feedback**: Uses **Noto Naskh Arabic** to ensure clear visual distinction between similar letters like **ه** and **ە**.
 - **💻 Cross-Browser Compatible**: Optimized for Chrome, Safari (Desktop & Mobile), and Firefox.
 
@@ -23,7 +23,7 @@
 
 ### English
 
-1. **Choose your settings**: Select a category and word length on the start screen.
+1. **Start the game**: Select a category on the start screen (the word length is picked randomly).
 2. **Guess the word**: You have 6 attempts to find the secret word.
 3. **Check the colors**:
    - 🟩 **Green**: Correct letter, correct spot.
@@ -33,7 +33,7 @@
 
 ### (Sorani) کوردی
 
-1. **ڕێکخستنەکان هەڵبژێرە**: جۆر و درێژی وشەکە هەڵبژێرە لە شاشەی دەستپێکردن.
+1. **دەست پێ بکە**: جۆرێک هەڵبژێرە لە شاشەی دەستپێکردن (درێژی وشەکە بە شێوەیەکی هەڕەمەکی دیاری دەکرێت).
 2. **وشەکە پێشبینی بکە**: ٦ هەوڵت هەیە بۆ دۆزینەوەی وشە نهێنییەکە.
 3. **سەیری ڕەنگەکان بکە**:
    - 🟩 **سەوز**: پیتەکە هەیە و لە شوێنی ڕاستە.
