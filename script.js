@@ -60,24 +60,22 @@ goToMenuBtn.addEventListener('click', resetToMenu);
 
 function startGame() {
   const category = document.getElementById('category-select').value;
-  const lengthInput = parseInt(document.getElementById('length-select').value);
 
-  if (lengthInput < 4 || lengthInput > 7) {
-    alert("تکایە ژمارەی پیتەکان لە نێوان ٤ بۆ ٧ بێت");
-    return;
-  }
-
-  // Filter words
+  // Get all words in category
   const allCategoryWords = WORD_DATA[category];
-  validWords = allCategoryWords.filter(w => w.length === lengthInput);
 
-  if (validWords.length === 0) {
-    alert(`هیچ وشەیەک نەدۆزرایەوە بە درێژی ${lengthInput} بۆ ئەم بەشە.`);
+  if (!allCategoryWords || allCategoryWords.length === 0) {
+    alert("هیچ وشەیەک نەدۆزرایەوە بۆ ئەم بەشە.");
     return;
   }
 
-  WORD_LENGTH = lengthInput;
-  secretWord = validWords[Math.floor(Math.random() * validWords.length)];
+  // Pick a random word from the whole category
+  secretWord = allCategoryWords[Math.floor(Math.random() * allCategoryWords.length)];
+  WORD_LENGTH = secretWord.length;
+
+  // Store validWords as all words of the SAME length for potential future valid list checks
+  validWords = allCategoryWords.filter(w => w.length === WORD_LENGTH);
+
   guesses = [[]];
   currentGuess = 0;
   currentTile = 0;
@@ -103,12 +101,21 @@ function startGame() {
 }
 
 function playAgain() {
-  secretWord = validWords[Math.floor(Math.random() * validWords.length)];
+  // Re-pick from the whole current category list (stored in WORD_DATA)
+  // We need to know which category was selected
+  const category = document.getElementById('category-select').value;
+  const allCategoryWords = WORD_DATA[category];
+
+  secretWord = allCategoryWords[Math.floor(Math.random() * allCategoryWords.length)];
+  WORD_LENGTH = secretWord.length;
+  validWords = allCategoryWords.filter(w => w.length === WORD_LENGTH);
+
   guesses = [[]];
   currentGuess = 0;
   currentTile = 0;
   isGameOver = false;
 
+  gameInput.maxLength = WORD_LENGTH + 1; // +1 for the dummy space
   gameInput.value = " "; // Dummy space
   gameInput.focus();
   endGameActions.classList.add('hidden');
