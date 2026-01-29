@@ -1,37 +1,302 @@
 const WORD_DATA = {
-  names: [
-    "ئازاد", "سارا", "نارین", "شادی", "باوان", "هێلین", "کاروان", "ڕێبین", "دڵنیا", "سۆران", "کاوە", "شیاو", "ژیان",
-    "ئاراس", "شوان", "هەڵۆ", "لانە", "میدیا", "سیروان", "هەڵمەت", "بڵێسە", "ئەوین", "تارا", "هێڤی", "کانی", "لاڤە", "دانا",
-    "سامان", "کامەران", "باران", "دیلان", "شێرکۆ", "ئاڵا", "بەرزان", "چۆمان", "هەردی", "زانا",
-    "بەختیار", "نیشتمان", "بەیان", "بریندار", "وشیارا", "بێستوون"
+  "names": [
+    "بریندار",
+    "بەختیار",
+    "بێستوون",
+    "کامەران",
+    "نیشتمان",
+    "بەرزان",
+    "بەهەشت",
+    "سیروان",
+    "کاروان",
+    "هەڵمەت",
+    "وشیارا",
+    "ئاراس",
+    "ئازاد",
+    "ئاواز",
+    "ئەوین",
+    "باران",
+    "باوان",
+    "بڵێسە",
+    "بەیان",
+    "چۆمان",
+    "دڵنیا",
+    "دیلان",
+    "ڕێبین",
+    "سامان",
+    "سۆران",
+    "شێرکۆ",
+    "میدیا",
+    "نارین",
+    "هەردی",
+    "هێلین",
+    "ئاڵا",
+    "تارا",
+    "دانا",
+    "زانا",
+    "ژیان",
+    "سارا",
+    "شادی",
+    "شوان",
+    "شیاو",
+    "کانی",
+    "کاوە",
+    "لاڤە",
+    "لانە",
+    "هەڵۆ",
+    "هیوا",
+    "هێڤی"
   ],
-  animals: [
-    "پشیلە", "مامز", "ڕێوی", "گورگ", "کۆتر", "ئاسک", "پڵنگ", "مریشک", "ماسی", "زەڕافە", "باڵندە", "ئەسپ", "هێستر", "مەیمون",
-    "قرژاڵ", "مێروولە", "نەهەنگ", "کەڵەشێر", "جووچکە", "تاوس", "کەروێشک", "چۆلەکە", "سیسرک",
-    "پەپوولە", "مێشوولە", "کیسەڵ", "سیسرکە"
+  "animals": [
+    "پەپوولە",
+    "کەروێشک",
+    "کەڵەشێر",
+    "مێروولە",
+    "مێشوولە",
+    "باڵندە",
+    "جووچکە",
+    "چۆلەکە",
+    "زەڕافە",
+    "سیسرکە",
+    "مەیمون",
+    "نەهەنگ",
+    "پشیلە",
+    "سیسرک",
+    "قرژاڵ",
+    "کیسەڵ",
+    "مریشک",
+    "هێستر",
+    "ئاسک",
+    "ئەسپ",
+    "پڵنگ",
+    "تاوس",
+    "ڕێوی",
+    "کۆتر",
+    "گورگ",
+    "ماسی",
+    "مامز",
+    "شێر",
+    "فیل",
+    "مار"
   ],
-  food: [
-    "ماست", "کەرە", "برنج", "گۆشت", "شۆربا", "یاپراخ", "دۆڵمە", "کەباب", "بریانی", "پەنیر", "تەماتە", "پیاز",
-    "قاوە", "شەربەت", "کفتە", "لۆبیا", "نیسک", "بەڕوو", "پەتاتە", "بیبەر", "ساوار", "قیمە",
-    "شفتە", "هێلکە", "کنگر", "دۆشاو",
-    "پاقلاوە", "ماست", "برنج", "کفتە", "دۆڵمە"
+  "food": [
+    "پاقلاوە",
+    "بریانی",
+    "پەتاتە",
+    "تەماتە",
+    "شەربەت",
+    "یاپراخ",
+    "بەڕوو",
+    "بیبەر",
+    "پەنیر",
+    "دۆشاو",
+    "دۆڵمە",
+    "ساوار",
+    "شۆربا",
+    "کەباب",
+    "گێزەر",
+    "لۆبیا",
+    "هێلکە",
+    "برنج",
+    "پیاز",
+    "شفتە",
+    "قاوە",
+    "قیمە",
+    "کفتە",
+    "کنگر",
+    "کەرە",
+    "گۆشت",
+    "ماست",
+    "نیسک",
+    "سیر",
+    "نان"
   ],
-  fruits: [
-    "خەیار", "هەنار", "شووتی", "قەیسی", "هەنجیر", "گێلاس", "شلیک", "هەرمێ", "کاڵەک", "لیمۆ",
-    "لالەنگی", "کیوی", "هەڵووژە", "بادەم", "گوێز", "سندی", "نارنج",
-    "هەنجیر", "شووتی", "قەیسی"
+  "fruits": [
+    "لالەنگی",
+    "هەڵووژە",
+    "هەنجیر",
+    "بادەم",
+    "خەیار",
+    "شووتی",
+    "قەیسی",
+    "کاڵەک",
+    "گێلاس",
+    "نارنج",
+    "هەرمێ",
+    "هەنار",
+    "سندی",
+    "شلیک",
+    "کیوی",
+    "گوێز",
+    "لیمۆ",
+    "ترێ",
+    "سێو",
+    "مۆز"
   ],
-  cities: [
-    "دهۆک", "زاخۆ", "ڕانیە", "کۆیە", "سمێڵ", "کفری", "ئامێد", "لۆلان",
-    "سۆران", "ئاکرێ", "دووکان", "ئامێدی", "شوان", "بانیێ",
-    "هەولێر", "هەڵەبجە", "قەڵادزێ", "شەقڵاوە", "پێنجوێن", "خەلیفان", "سیدەکان", "حاجیاوا", "پیرمام",
-    "عەربەت", "سیدسادق", "سلێمانی", "کەرکووک", "ڕەواندز"
+  "cities": [
+    "پێنجوێن",
+    "حاجیاوا",
+    "خانەقین",
+    "خەلیفان",
+    "ڕەواندز",
+    "سلێمانی",
+    "سیدسادق",
+    "سیدەکان",
+    "شەقڵاوە",
+    "قەڵادزێ",
+    "کەرکووک",
+    "هەڵەبجە",
+    "ئامێدی",
+    "پیرمام",
+    "دووکان",
+    "عەربەت",
+    "هەولێر",
+    "ئاکرێ",
+    "ئامێد",
+    "بانیێ",
+    "ڕانیە",
+    "سۆران",
+    "کەلار",
+    "لۆلان",
+    "دهۆک",
+    "زاخۆ",
+    "سمێڵ",
+    "شوان",
+    "کفری",
+    "کۆیە"
   ],
-  countries: [
-    "میسر", "تونس", "سوید", "کوێت", "مالی", "کەنیا", "کوبا", "غانا", "وێڵز", "نوروج", "نەروەج", "قوبرس",
-    "عێراق", "ئێران", "قەتەر", "عومان", "سوریا", "یەمەن", "لیبیا", "یۆنان", "ژاپۆن", "نەمسا", "سعوودی", "ئوردن", "لوبنان", "بێلژیک", "پەنەما", "تایلەند",
-    "مەغریب", "ئۆردۆن", "کەنەدا", "مەکسیک", "تورکیا", "جۆرجیا", "سویسرا", "بەحرێن", "ڤێتنام", "ڕووسیا", "سوودان", "سۆماڵ", "فلیپین", "ئاڵمان", "مۆناکۆ", "تایوان",
-    "بەلجیکا", "فەڕەنسا", "ئیتالیا", "جەزائیر", "بەڕازیل", "پۆڵەندا", "مالیزیا", "ئەمریکا", "ڤاتیکان", "هۆڵەندا", "سورینام"
+  "countries": [
+    "ئەمریکا",
+    "ئیتالیا",
+    "بەڕازیل",
+    "بەلجیکا",
+    "پۆڵەندا",
+    "تایلەند",
+    "جەزائیر",
+    "سورینام",
+    "فەڕەنسا",
+    "ڤاتیکان",
+    "مالیزیا",
+    "هۆڵەندا",
+    "ئاڵمان",
+    "ئۆردۆن",
+    "بەحرێن",
+    "بێلژیک",
+    "پەنەما",
+    "تایوان",
+    "تورکیا",
+    "جۆرجیا",
+    "ڕووسیا",
+    "سعودیە",
+    "سوودان",
+    "سویسرا",
+    "فلیپین",
+    "ڤێتنام",
+    "کەنەدا",
+    "لوبنان",
+    "مەغریب",
+    "مەکسیک",
+    "مۆناکۆ",
+    "نەرویج",
+    "ئوردن",
+    "ئێران",
+    "ژاپۆن",
+    "سوریا",
+    "سۆماڵ",
+    "عومان",
+    "عێراق",
+    "قەتەر",
+    "قوبرس",
+    "کینیا",
+    "لیبیا",
+    "نەمسا",
+    "یەمەن",
+    "یۆنان",
+    "تونس",
+    "سوید",
+    "غانا",
+    "کوبا",
+    "کوێت",
+    "مالی",
+    "میسر",
+    "وێڵز",
+    "چین"
+  ],
+  "nature": [
+    "ئەستێرە",
+    "سەوزایی",
+    "ئاسمان",
+    "ڕووبار",
+    "باران",
+    "بەهار",
+    "پاییز",
+    "دەریا",
+    "زستان",
+    "هاوین",
+    "بەفر",
+    "مانگ",
+    "وەرز",
+    "خۆر",
+    "دار",
+    "شاخ",
+    "گوڵ"
+  ],
+  "body_parts": [
+    "پەنجە",
+    "ددان",
+    "دەست",
+    "زمان",
+    "لووت",
+    "چاو",
+    "سەر",
+    "شان",
+    "قاچ",
+    "گوێ",
+    "لێو",
+    "موو"
+  ],
+  "household": [
+    "پەنجەرە",
+    "پەرداخ",
+    "سەلاجە",
+    "خاولی",
+    "دەرگا",
+    "دۆشەک",
+    "کەوچک",
+    "کورسی",
+    "بەڕە",
+    "چەقۆ",
+    "سۆپا",
+    "قاپ",
+    "مێز"
+  ],
+  "professions": [
+    "بازرگان",
+    "پارێزەر",
+    "کارمەند",
+    "مامۆستا",
+    "جوتیار",
+    "دارتاش",
+    "نووسەر",
+    "وێنەگر",
+    "پزیشک",
+    "پۆلیس",
+    "شۆفێر",
+    "وەستا"
+  ],
+  "colors": [
+    "زەیتونی",
+    "پەمەیی",
+    "ڕەساسی",
+    "قاوەیی",
+    "زەرد",
+    "سەوز",
+    "سوور",
+    "نیلی",
+    "ڕەش",
+    "سپی",
+    "شین",
+    "مۆر"
   ]
 };
 
@@ -54,9 +319,78 @@ const playAgainBtn = document.getElementById('play-again-btn');
 const goToMenuBtn = document.getElementById('go-to-menu-btn');
 
 // Start Game Listener
+// Start Game Listener
 startBtn.addEventListener('click', startGame);
 playAgainBtn.addEventListener('click', playAgain);
 goToMenuBtn.addEventListener('click', resetToMenu);
+
+// Custom Dropdown Logic
+function initCustomDropdown() {
+  const wrapper = document.querySelector('.custom-select-wrapper');
+  const select = wrapper.querySelector('.custom-select');
+  const trigger = wrapper.querySelector('.custom-select-trigger');
+  const options = wrapper.querySelectorAll('.custom-option');
+  const hiddenInput = document.getElementById('category-select');
+  const triggerText = document.getElementById('trigger-text');
+
+  // Toggle open
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent document click from closing immediately
+    select.classList.toggle('open');
+  });
+
+  // Option select
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      // Update hidden input
+      hiddenInput.value = option.dataset.value;
+
+      // Update trigger text
+      triggerText.textContent = option.textContent;
+
+      // Update selected class
+      options.forEach(opt => opt.classList.remove('selected'));
+      option.classList.add('selected');
+
+      // Close dropdown
+      select.classList.remove('open');
+    });
+  });
+
+  // Click outside to close
+  document.addEventListener('click', (e) => {
+    if (!wrapper.contains(e.target)) {
+      select.classList.remove('open');
+    }
+  });
+}
+
+// Initialize Dropdown
+initCustomDropdown();
+
+
+function getSecretWord(words) {
+  const allowedLengths = [3, 4, 5, 6, 7];
+  // Filter words that match allowed lengths
+  const candidates = words.filter(w => allowedLengths.includes(w.length));
+
+  // If no words match (fallback), just return random from original list
+  if (candidates.length === 0) {
+    return words[Math.floor(Math.random() * words.length)];
+  }
+
+  // 1. Identify which lengths exist in the candidates
+  const availableLengths = [...new Set(candidates.map(w => w.length))];
+
+  // 2. Pick a random length from the available ones
+  const chosenLength = availableLengths[Math.floor(Math.random() * availableLengths.length)];
+
+  // 3. Filter candidates to only that length
+  const specificLengthWords = candidates.filter(w => w.length === chosenLength);
+
+  // 4. Pick a random word from that filtered list
+  return specificLengthWords[Math.floor(Math.random() * specificLengthWords.length)];
+}
 
 function startGame() {
   const category = document.getElementById('category-select').value;
@@ -74,8 +408,8 @@ function startGame() {
     return;
   }
 
-  // Pick a random word from the whole category
-  secretWord = allCategoryWords[Math.floor(Math.random() * allCategoryWords.length)];
+  // Pick a random word using the new logic (random length 4-7 first)
+  secretWord = getSecretWord(allCategoryWords);
   WORD_LENGTH = secretWord.length;
 
   // Store validWords as all words of the SAME length for potential future valid list checks
@@ -93,7 +427,7 @@ function startGame() {
   gameUI.classList.add('active'); // Ensure flex display
 
   // Set Category Display
-  const categoryLabel = document.querySelector(`#category-select option[value="${category}"]`).textContent;
+  const categoryLabel = document.querySelector(`.custom-option[data-value="${category}"]`).textContent;
   document.getElementById('current-category').textContent = categoryLabel.split('(')[0].trim();
 
   // Update Input MaxLength
@@ -116,7 +450,7 @@ function playAgain() {
     allCategoryWords = WORD_DATA[category];
   }
 
-  secretWord = allCategoryWords[Math.floor(Math.random() * allCategoryWords.length)];
+  secretWord = getSecretWord(allCategoryWords);
   WORD_LENGTH = secretWord.length;
   validWords = allCategoryWords.filter(w => w.length === WORD_LENGTH);
 

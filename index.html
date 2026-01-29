@@ -31,15 +31,29 @@
 
         <div class="setting-group">
           <label for="category-select">جۆر (Category)</label>
-          <select id="category-select" name="category">
-            <option value="names">ناو (Names)</option>
-            <option value="animals">ئاژەڵ (Animals)</option>
-            <option value="food">خواردن (Food)</option>
-            <option value="fruits">میوە (Fruits)</option>
-            <option value="cities">شارەکان (Cities)</option>
-            <option value="countries">وڵاتەکان (Countries)</option>
-            <option value="mix">تێکەڵە (Mix)</option>
-          </select>
+          <div class="custom-select-wrapper">
+            <input type="hidden" id="category-select" value="names">
+            <div class="custom-select">
+              <div class="custom-select-trigger">
+                <span id="trigger-text">ناو (Names)</span>
+                <div class="arrow"></div>
+              </div>
+              <div class="custom-options">
+                <div class="custom-option" data-value="mix">تێکەڵە (Mix)</div>
+                <div class="custom-option selected" data-value="names">ناو (Names)</div>
+                <div class="custom-option" data-value="animals">ئاژەڵ (Animals)</div>
+                <div class="custom-option" data-value="food">خواردن (Food)</div>
+                <div class="custom-option" data-value="fruits">میوە (Fruits)</div>
+                <div class="custom-option" data-value="cities">شارەکان (Cities)</div>
+                <div class="custom-option" data-value="countries">وڵاتەکان (Countries)</div>
+                <div class="custom-option" data-value="nature">سروشت (Nature)</div>
+                <div class="custom-option" data-value="body_parts">ئەندامەکانی جەستە (Body Parts)</div>
+                <div class="custom-option" data-value="household">کەلوپەلی ماڵ (Household Items)</div>
+                <div class="custom-option" data-value="professions">پیشەکان (Professions)</div>
+                <div class="custom-option" data-value="colors">ڕەنگەکان (Colors)</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <button id="start-game-btn" class="primary-btn">دەستپێکردن</button>
